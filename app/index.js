@@ -1,3 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-console.log(React.version);
+
+import Hello from '../components/hello';
+// console.log(Hello);
+render(<Hello></Hello>, document.getElementById('root'));

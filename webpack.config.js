@@ -1,8 +1,8 @@
-const webpack =  require('webpack');
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  entry:[
+  entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     'react-hot-loader/patch',
@@ -16,7 +16,9 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.jsx?$/,
-      loader: 'babel-loader'
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: { presets: ['es2015', 'react'] } 
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
