@@ -24,13 +24,13 @@ module.exports = {
       loader: 'style-loader!css-loader'
     }, {
       test: /\.less$/,
-      loader: 'style-loadercss-loader!less-loader'
+      loader: 'style-loader!css-loader!less-loader'
     }]
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: '',
       template: './index.html',
-      inject: 'body',
       filename: './index.html'
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
